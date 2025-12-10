@@ -19,7 +19,7 @@ import MinhaFoto from '../assets/MinhaFoto.jpg';
 
 // Importação das Imagens dos Projetos
 import AgentIA from '../assets/Agent IA.png';
-import ConectaDoa from '../assets/ConectaDoa.png';
+import MarvelStore from '../assets/MarvelStore.png';
 import GamerHub from '../assets/GamerHub.png';
 import RaioXapp from '../assets/RaioXapp.jpeg';
 import Video from '../assets/Video.mp4';
@@ -182,14 +182,14 @@ export default function App() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 auto-rows-[minmax(0,1fr)]">
-            {/* 1. Conecta Doa (Horizontal - 2 colunas) */}
+            {/* 1. MarvelStore (Horizontal - 2 colunas) */}
             <ProjectCard
-              title="Conecta Doa"
-              description="Plataforma de conexão para doações, facilitando o encontro entre quem quer ajudar e quem precisa."
-              tags={['React', 'Node.js', 'MongoDB', 'jsx']}
-              image={ConectaDoa}
-              repoLink="https://github.com/RobsonMarcolino/projeto-conecta-doa"
-              demoLink="https://github.com/RobsonMarcolino/projeto-conecta-doa"
+              title="MarvelStore"
+              description="A melhor loja de quadrinhos da Marvel. Compre HQs exclusivas dos Vingadores, X-Men, Homem-Aranha e muito mais."
+              tags={['React', 'API', 'JavaScript', 'CSS']}
+              image={MarvelStore}
+              repoLink="https://github.com/RobsonMarcolino/marvel-store"
+              demoLink="https://robsonmarcolino.github.io/marvel-store/"
               className="md:col-span-2"
               imageHeight="h-48 md:h-64"
             />
@@ -294,11 +294,11 @@ export default function App() {
               </Button>
             </div>
           </div>
-        </div>
-      </section>
+        </div >
+      </section >
 
       {/* --- CONTACT SECTION --- */}
-      <section className="py-24 bg-[#FAFAFA] dark:bg-gray-900 transition-colors duration-300" id="contact">
+      < section className="py-24 bg-[#FAFAFA] dark:bg-gray-900 transition-colors duration-300" id="contact" >
         <div className="container mx-auto px-6 text-center">
           <div data-aos="fade-up">
             <span className="text-[#FFC107] font-bold text-sm uppercase tracking-wider">— Contato</span>
@@ -342,12 +342,12 @@ export default function App() {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       <Footer />
       <div className="hidden md:block">
         <CustomCursor />
       </div>
-    </div>
+    </div >
   );
 }
