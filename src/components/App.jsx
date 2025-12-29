@@ -18,6 +18,7 @@ import CustomCursor from './CustomCursor';
 import Preloader from './Preloader';
 import Toast from './Toast';
 import ProfileDisplay from './ProfileDisplay';
+import BackToTop from './BackToTop';
 import MinhaFoto from '../assets/MinhaFoto.jpg';
 
 // Importação das Imagens dos Projetos
@@ -28,6 +29,9 @@ import RaioXapp from '../assets/RaioXapp.jpeg';
 import Video from '../assets/Video.mp4';
 import MecChill from '../assets/MecChill.png';
 import CestasMimos from '../assets/CestasMimos.png';
+import NexusStore from '../assets/NexusStore.png';
+import TheBarber from '../assets/TheBarber.png';
+
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -55,72 +59,74 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-[#FAFAFA] dark:bg-gray-900 bg-tech-grid font-sans selection:bg-[#FFC107] selection:text-[#1A2C24] transition-colors duration-300 md:cursor-none overflow-x-hidden" id="home">
+    <div className="min-h-screen bg-[#FAFAFA] dark:bg-gray-900 font-sans selection:bg-[#FFC107] selection:text-[#1A2C24] transition-colors duration-300 md:cursor-none overflow-x-hidden" id="home">
 
       <Navbar />
 
       {/* --- HERO SECTION --- */}
-      <header className="container mx-auto px-6 pt-32 md:pt-40 flex flex-col md:flex-row items-center gap-12 relative">
-        {/* Texto Hero */}
-        <div className="flex-1 z-10" data-aos="fade-right">
-          <div className="inline-block px-4 py-1.5 bg-[#FFF8E1] text-[#FFC107] font-bold text-xs rounded-full mb-6 border border-[#FFC107]/20 font-sans">
-            🚀 Tech & Data Specialist
-          </div>
-          <h1 className="text-5xl md:text-7xl font-black text-[#1A2C24] dark:text-white leading-[1.1] mb-6 font-heading">
-            I am <span className="text-[#FFC107] underline decoration-4 underline-offset-4 decoration-[#1A2C24]/10">Robson,</span><br />
-            Business Solutions<br />
-            Developer.
-          </h1>
-          <p className="text-gray-500 dark:text-gray-400 text-lg mb-10 max-w-lg leading-relaxed font-sans">
-            I transform data and technology into efficient business results. Focused on intelligent automation, data analysis, and high-performance digital solutions.
-          </p>
-
-          <div className="flex flex-wrap gap-4">
-            <Button variant="primary" href="https://github.com/RobsonMarcolino?tab=repositories" target="_blank" rel="noopener noreferrer">
-              View My Code <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center ml-2"><Code size={10} fill="currentColor" /></div>
-            </Button>
-            <Button variant="secondary" href="https://www.linkedin.com/in/robson-marcolino" target="_blank" rel="noopener noreferrer">
-              LinkedIn
-            </Button>
-          </div>
-        </div>
-
-        {/* Imagem Hero */}
-        <div className="flex-1 relative flex justify-center" data-aos="fade-left">
-          {/* Formas de Fundo */}
-          <div className="absolute top-10 right-10 w-[400px] h-[400px] bg-[#FFC107] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-          <div className="absolute -bottom-10 -left-10 w-[300px] h-[300px] bg-[#1A2C24] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
-
-          {/* Círculo Amarelo Decorativo */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-[#FFC107] rounded-full -z-10 mt-10 ml-10"></div>
-
-          {/* Imagem Principal */}
-          <div className="relative z-10">
-            <img
-              src={MinhaFoto}
-              alt="Robson - Engenheiro de Software"
-              className="w-[400px] h-[500px] object-cover rounded-[3rem] shadow-2xl"
-            />
-
-            {/* Floating Badges */}
-            <div className="absolute top-10 -left-12 bg-white/90 backdrop-blur-sm p-4 rounded-2xl shadow-xl flex items-center gap-3 animate-bounce-slow">
-              <div className="bg-[#1A2C24] text-white p-2 rounded-lg font-bold text-xs"><Code size={16} /></div>
-              <div className="text-xs font-bold text-[#1A2C24] font-sans">Data<br />Driven</div>
+      <div className="w-full bg-tech-grid relative">
+        <header className="container mx-auto px-6 pt-32 md:pt-40 flex flex-col md:flex-row items-center gap-12 relative">
+          {/* Texto Hero */}
+          <div className="flex-1 z-10" data-aos="fade-right">
+            <div className="inline-block px-4 py-1.5 bg-[#FFF8E1] text-[#FFC107] font-bold text-xs rounded-full mb-6 border border-[#FFC107]/20 font-sans">
+              🚀 Tech & Data Specialist
             </div>
+            <h1 className="text-5xl md:text-7xl font-black text-[#1A2C24] dark:text-white leading-[1.1] mb-6 font-heading">
+              I am <span className="text-[#FFC107] underline decoration-4 underline-offset-4 decoration-[#1A2C24]/10">Robson,</span><br />
+              Business Solutions<br />
+              Developer.
+            </h1>
+            <p className="text-gray-500 dark:text-gray-400 text-lg mb-10 max-w-lg leading-relaxed font-sans">
+              I transform data and technology into efficient business results. Focused on intelligent automation, data analysis, and high-performance digital solutions.
+            </p>
 
-            <div className="absolute bottom-20 -right-6 bg-white/90 backdrop-blur-sm p-3 px-5 rounded-full shadow-xl flex items-center gap-2 animate-bounce-slow delay-700">
-              <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
-              <span className="text-sm font-bold text-[#1A2C24] font-sans">Available for Projects</span>
+            <div className="flex flex-wrap gap-4">
+              <Button variant="primary" href="https://github.com/RobsonMarcolino?tab=repositories" target="_blank" rel="noopener noreferrer">
+                View My Code <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center ml-2"><Code size={10} fill="currentColor" /></div>
+              </Button>
+              <Button variant="secondary" href="https://www.linkedin.com/in/robson-marcolino" target="_blank" rel="noopener noreferrer">
+                LinkedIn
+              </Button>
             </div>
+          </div>
 
-            <div className="absolute top-1/3 -right-12 bg-white p-3 rounded-xl shadow-lg rotate-12">
-              <div className="text-xs font-black text-[#1A2C24] text-center leading-tight">
-                FULL<br /><span className="text-[#FFC107]">STACK</span>
+          {/* Imagem Hero */}
+          <div className="flex-1 relative flex justify-center" data-aos="fade-left">
+            {/* Formas de Fundo */}
+            <div className="absolute top-10 right-10 w-[400px] h-[400px] bg-[#FFC107] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+            <div className="absolute -bottom-10 -left-10 w-[300px] h-[300px] bg-[#1A2C24] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
+
+            {/* Círculo Amarelo Decorativo */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-[#FFC107] rounded-full -z-10 mt-10 ml-10"></div>
+
+            {/* Imagem Principal */}
+            <div className="relative z-10">
+              <img
+                src={MinhaFoto}
+                alt="Robson - Engenheiro de Software"
+                className="w-[400px] h-[500px] object-cover rounded-[3rem] shadow-2xl"
+              />
+
+              {/* Floating Badges */}
+              <div className="absolute top-10 -left-12 bg-white/90 backdrop-blur-sm p-4 rounded-2xl shadow-xl flex items-center gap-3 animate-bounce-slow">
+                <div className="bg-[#1A2C24] text-white p-2 rounded-lg font-bold text-xs"><Code size={16} /></div>
+                <div className="text-xs font-bold text-[#1A2C24] font-sans">Data<br />Driven</div>
+              </div>
+
+              <div className="absolute bottom-20 -right-6 bg-white/90 backdrop-blur-sm p-3 px-5 rounded-full shadow-xl flex items-center gap-2 animate-bounce-slow delay-700">
+                <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
+                <span className="text-sm font-bold text-[#1A2C24] font-sans">Available for Projects</span>
+              </div>
+
+              <div className="absolute top-1/3 -right-12 bg-white p-3 rounded-xl shadow-lg rotate-12">
+                <div className="text-xs font-black text-[#1A2C24] text-center leading-tight">
+                  FULL<br /><span className="text-[#FFC107]">STACK</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </header>
+        </header>
+      </div>
 
       {/* --- BANNER AMARELO --- */}
       <div className="bg-[#FFC107] py-6 mt-20 rotate-1 scale-105 shadow-lg relative z-20 overflow-hidden" id="skills">
@@ -151,45 +157,47 @@ export default function App() {
       </div>
 
       {/* --- SERVICES SECTION --- */}
-      <section className="container mx-auto px-6 py-24" id="projects">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16" data-aos="fade-up">
-          <div>
-            <span className="text-[#FFC107] font-bold text-sm uppercase tracking-wider font-sans">— My Expertise</span>
-            <h2 className="text-4xl font-black text-[#1A2C24] dark:text-white mt-2 font-heading">
-              Digital <span className="relative">
-                Solutions
-                <svg className="absolute w-full h-3 -bottom-1 left-0 text-[#FFC107] opacity-60" viewBox="0 0 100 10" preserveAspectRatio="none">
-                  <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="8" fill="none" />
-                </svg>
-              </span>
-            </h2>
+      <section className="relative bg-[#15231d] bg-grid-pattern py-24" id="projects">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16" data-aos="fade-up">
+            <div>
+              <span className="text-[#FFC107] font-bold text-sm uppercase tracking-wider font-sans">— My Expertise</span>
+              <h2 className="text-4xl md:text-5xl font-black text-white mt-3 font-heading">
+                Digital <span className="relative">
+                  Solutions
+                  <svg className="absolute w-full h-3 -bottom-1 left-0 text-[#FFC107] opacity-60" viewBox="0 0 100 10" preserveAspectRatio="none">
+                    <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="8" fill="none" />
+                  </svg>
+                </span>
+              </h2>
+            </div>
+            <Button variant="primary" className="mt-6 md:mt-0" icon={ArrowRight} href="#projects-real">
+              View My Projects
+            </Button>
           </div>
-          <Button variant="primary" className="mt-6 md:mt-0" icon={ArrowRight} href="#projects-real">
-            View My Projects
-          </Button>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <ServiceCard
-            icon={Monitor}
-            title="Full Stack Development"
-            description="Web & Mobile applications focused on performance, usability, and solving business problems."
-          />
-          <ServiceCard
-            icon={Code}
-            title="Data Analysis & BI"
-            description="Transforming raw data into actionable insights through interactive dashboards and detailed reports."
-          />
-          <ServiceCard
-            icon={Zap}
-            title="Process Automation"
-            description="Creation of scripts and tools to automate repetitive tasks, increasing efficiency and reducing errors."
-          />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <ServiceCard
+              icon={Monitor}
+              title="Full Stack Development"
+              description="Web & Mobile applications focused on performance, usability, and solving business problems."
+            />
+            <ServiceCard
+              icon={Code}
+              title="Data Analysis & BI"
+              description="Transforming raw data into actionable insights through interactive dashboards and detailed reports."
+            />
+            <ServiceCard
+              icon={Zap}
+              title="Process Automation"
+              description="Creation of scripts and tools to automate repetitive tasks, increasing efficiency and reducing errors."
+            />
+          </div>
         </div>
       </section>
 
       {/* --- REAL PROJECTS SECTION --- */}
-      <section className="bg-white dark:bg-gray-800 py-24 transition-colors duration-300" id="projects-real">
+      <section className="relative bg-tech-grid py-24 transition-colors duration-300" id="projects-real">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16" data-aos="fade-up">
             <span className="text-[#FFC107] font-bold text-sm uppercase tracking-wider font-sans">— Portfolio</span>
@@ -199,14 +207,14 @@ export default function App() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 auto-rows-[minmax(0,1fr)]">
-            {/* 1. MarvelStore (Horizontal - 2 colunas) */}
+            {/* 1. Nexus Store (Horizontal - 2 colunas) */}
             <ProjectCard
-              title="MarvelStore"
-              description="The best Marvel comic store. Buy exclusive comics from Avengers, X-Men, Spider-Man, and more."
-              tags={['React', 'API', 'JavaScript', 'CSS']}
-              image={MarvelStore}
-              repoLink="https://github.com/RobsonMarcolino/marvel-store"
-              demoLink="https://robsonmarcolino.github.io/marvel-store/"
+              title="NEXUS Store"
+              description="High-performance gamer store. A futuristic e-commerce for gaming gear."
+              tags={['React', 'E-commerce', 'UI/UX']}
+              image={NexusStore}
+              repoLink="https://github.com/RobsonMarcolino/Nexus-store"
+              demoLink="https://nexus-store-zeta.vercel.app/"
               className="md:col-span-2"
               imageHeight="h-48 md:h-64"
             />
@@ -264,12 +272,32 @@ export default function App() {
               repoLink="https://github.com/RobsonMarcolino/cestas-e-mimos"
               demoLink="https://cestas-e-mimos.vercel.app/"
             />
+
+            {/* 7. MarvelStore (Normal - 1 coluna) */}
+            <ProjectCard
+              title="MarvelStore"
+              description="The best Marvel comic store. Buy exclusive comics from Avengers, X-Men, Spider-Man, and more."
+              tags={['React', 'API', 'JavaScript', 'CSS']}
+              image={MarvelStore}
+              repoLink="https://github.com/RobsonMarcolino/marvel-store"
+              demoLink="https://robsonmarcolino.github.io/marvel-store/"
+            />
+
+            {/* 8. The Barber Company (Normal - 1 coluna) */}
+            <ProjectCard
+              title="The Barber Company"
+              description="Modern barber shop website featuring services, booking, and styling."
+              tags={['HTML', 'CSS', 'JavaScript']}
+              image={TheBarber}
+              repoLink="https://github.com/RobsonMarcolino/The-barber-Company"
+              demoLink="https://robsonmarcolino.github.io/The-barber-Company/"
+            />
           </div>
         </div>
       </section>
 
       {/* --- ABOUT ME SECTION (DARK) --- */}
-      <section className="bg-[#1A2C24] text-white py-24 relative overflow-hidden" id="about">
+      <section className="relative bg-[#1A2C24] bg-grid-pattern text-white py-24 overflow-hidden" id="about">
         {/* Elementos de fundo */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#FFC107] rounded-full mix-blend-overlay filter blur-[120px] opacity-10"></div>
 
@@ -321,7 +349,7 @@ export default function App() {
       </section >
 
       {/* --- CONTACT SECTION --- */}
-      < section className="py-24 bg-[#FAFAFA] dark:bg-gray-900 transition-colors duration-300" id="contact" >
+      < section className="relative py-24 bg-[#FAFAFA] bg-grid-pattern-light dark:bg-gray-900 transition-colors duration-300" id="contact" >
         <div className="container mx-auto px-6 text-center">
           <div data-aos="fade-up">
             <span className="text-[#FFC107] font-bold text-sm uppercase tracking-wider font-sans">— Contact</span>
@@ -371,7 +399,7 @@ export default function App() {
       <div className="hidden md:block">
         <CustomCursor />
       </div>
-
+      <BackToTop />
       {showToast && (
         <Toast
           message="Email copied to clipboard! 🚀"

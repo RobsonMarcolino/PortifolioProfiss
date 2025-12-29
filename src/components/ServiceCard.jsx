@@ -7,7 +7,7 @@ const ServiceCard = ({ icon: Icon, title, description }) => (
     <div className="absolute inset-0 bg-gradient-to-br from-gray-200 via-gray-100 to-gray-200 dark:from-gray-700 dark:via-gray-800 dark:to-gray-700 opacity-100 group-hover:from-[#FFC107] group-hover:via-[#FFC107]/50 group-hover:to-transparent transition-all duration-500"></div>
 
     {/* Card Content */}
-    <div className="relative h-full bg-[#FAFAFA] dark:bg-gray-900/90 backdrop-blur-xl p-8 rounded-[23px] transition-all duration-300 group-hover:bg-opacity-90">
+    <div className="relative h-full bg-gradient-to-br from-white to-gray-100 dark:bg-gray-900/90 backdrop-blur-xl p-8 rounded-[23px] transition-all duration-300 group-hover:bg-opacity-90">
 
       {/* Icon Container */}
       <div className="w-16 h-16 bg-white dark:bg-gray-800 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-gray-200/50 dark:shadow-black/50 group-hover:scale-110 group-hover:bg-[#FFC107] transition-all duration-300 border border-gray-100 dark:border-gray-700 group-hover:border-[#FFC107]">

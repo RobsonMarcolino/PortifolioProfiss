@@ -37,7 +37,7 @@ html {
   /* Custom Tech Background Image */
   .bg-tech-grid {
     background-color: #FAFAFA;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('./assets/fundotech.jpg');
+    background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('./assets/fundotech.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -46,6 +46,25 @@ html {
 
   .dark .bg-tech-grid {
     background-color: #111827;
-    background-image: linear-gradient(rgba(17, 24, 39, 0.85), rgba(17, 24, 39, 0.85)), url('./assets/fundotech.jpg');
+    background-image: linear-gradient(rgba(17, 24, 39, 0.85), rgba(17, 24, 39, 0.85)), url('./assets/fundotech.png');
+  }
+
+  /* Subtle Grid Pattern for Dark Sections */
+  .bg-grid-pattern {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+    /* Fade edges for softness */
+  }
+
+  /* Tech Background for Cards */
+  .bg-card-tech {
+    background-color: #FAFAFA;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url('./assets/fundotech.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Github, ExternalLink } from 'lucide-react';
 import Skeleton from './Skeleton';
 
@@ -9,8 +9,50 @@ const ProjectCard = ({ title, description, tags, image, video, repoLink, demoLin
         setIsLoading(false);
     };
 
+    const divRef = useRef(null);
+    const [isFocused, setIsFocused] = useState(false);
+    const [position, setPosition] = useState({ x: 0, y: 0 });
+    const [opacity, setOpacity] = useState(0);
+
+    const handleMouseMove = (e) => {
+        if (!divRef.current) return;
+        const div = divRef.current;
+        const rect = div.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        setPosition({ x, y });
+    };
+
+    const handleMouseEnter = () => {
+        setIsFocused(true);
+        setOpacity(1);
+    };
+
+    const handleMouseLeave = () => {
+        setIsFocused(false);
+        setOpacity(0);
+    };
+
     return (
-        <div className={`group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col ${className}`} data-aos="fade-up">
+        <div
+            ref={divRef}
+            onMouseMove={handleMouseMove}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            className={`group relative rounded-3xl overflow-hidden bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col ${className}`}
+            data-aos="fade-up"
+        >
+            {/* Spotlight Overlay */}
+            <div
+                className="pointer-events-none absolute -inset-px opacity-0 transition duration-300 z-30"
+                style={{
+                    opacity,
+                    background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(255,193,7,0.15), transparent 40%)`
+                }}
+            />
+
             {/* Image/Video Container */}
             <div className={`${imageHeight} overflow-hidden relative w-full shrink-0 bg-gray-50 dark:bg-gray-900`}>
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-all duration-500 z-10 pointer-events-none"></div>
@@ -23,6 +65,7 @@ const ProjectCard = ({ title, description, tags, image, video, repoLink, demoLin
 
                 {video && showPhoneFrame ? (
                     <div className={`w-full h-full flex items-center justify-center p-4 scale-90 md:scale-100 transition-transform duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
+                        {/* Original Detailed Phone Frame */}
                         <div className="relative mx-auto border-gray-900 bg-gray-900 border-[14px] rounded-[2.5rem] h-full aspect-[9/19] shadow-xl">
                             <div className="w-[148px] h-[18px] bg-gray-900 top-0 rounded-b-[1rem] left-1/2 -translate-x-1/2 absolute z-20"></div>
                             <div className="h-[32px] w-[3px] bg-gray-900 absolute -left-[17px] top-[72px] rounded-l-lg"></div>
