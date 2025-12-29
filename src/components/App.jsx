@@ -54,13 +54,11 @@ export default function App() {
     });
   }, []);
 
-  if (loading) {
-    return <Preloader onFinish={handlePreloaderFinish} />;
-  }
+
 
   return (
     <div className="min-h-screen bg-[#FAFAFA] dark:bg-gray-900 font-sans selection:bg-[#FFC107] selection:text-[#1A2C24] transition-colors duration-300 md:cursor-none overflow-x-hidden" id="home">
-
+      {loading && <Preloader onFinish={handlePreloaderFinish} />}
       <Navbar />
 
       {/* --- HERO SECTION --- */}
