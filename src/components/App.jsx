@@ -31,7 +31,8 @@ import MecChill from '../assets/MecChill.png';
 import CestasMimos from '../assets/CestasMimos.png';
 import NexusStore from '../assets/NexusStore.png';
 import TheBarber from '../assets/TheBarber.png';
-import NathaniPage from '../assets/NathaniPage.png';
+
+import Gestao from '../assets/Gestao.png';
 
 
 export default function App() {
@@ -300,7 +301,7 @@ export default function App() {
               title="Nathani Consultoria"
               description="Landing page for Nathani Consultoria with focus on paid traffic management."
               tags={['React', 'Landing Page', 'Marketing', 'Traffic']}
-              image={NathaniPage}
+              image={Gestao}
               repoLink="https://github.com/RobsonMarcolino/nathani-page"
               demoLink="https://robsonmarcolino.github.io/nathani-page/"
             />
