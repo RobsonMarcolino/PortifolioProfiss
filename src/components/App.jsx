@@ -31,6 +31,7 @@ import MecChill from '../assets/MecChill.png';
 import CestasMimos from '../assets/CestasMimos.png';
 import NexusStore from '../assets/NexusStore.png';
 import TheBarber from '../assets/TheBarber.png';
+import NathaniPage from '../assets/NathaniPage.png';
 
 
 export default function App() {
@@ -205,7 +206,19 @@ export default function App() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 auto-rows-[minmax(0,1fr)]">
-            {/* 1. Nexus Store (Horizontal - 2 colunas) */}
+            {/* 1. Nathani Consultoria (Horizontal - 2 colunas) */}
+            <ProjectCard
+              title="Nathani Consultoria"
+              description="Landing page for Nathani Consultoria with focus on paid traffic management."
+              tags={['React', 'Landing Page', 'Marketing', 'Traffic']}
+              image={NathaniPage}
+              repoLink="https://github.com/RobsonMarcolino/nathani-page"
+              demoLink="https://robsonmarcolino.github.io/nathani-page/"
+              className="md:col-span-2"
+              imageHeight="h-48 md:h-64"
+            />
+
+            {/* 2. Nexus Store (Horizontal - 2 colunas) */}
             <ProjectCard
               title="NEXUS Store"
               description="High-performance gamer store. A futuristic e-commerce for gaming gear."
