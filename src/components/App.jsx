@@ -206,17 +206,8 @@ export default function App() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 auto-rows-[minmax(0,1fr)]">
-            {/* 1. Nathani Consultoria (Horizontal - 2 colunas) */}
-            <ProjectCard
-              title="Nathani Consultoria"
-              description="Landing page for Nathani Consultoria with focus on paid traffic management."
-              tags={['React', 'Landing Page', 'Marketing', 'Traffic']}
-              image={NathaniPage}
-              repoLink="https://github.com/RobsonMarcolino/nathani-page"
-              demoLink="https://robsonmarcolino.github.io/nathani-page/"
-              className="md:col-span-2"
-              imageHeight="h-48 md:h-64"
-            />
+            {/* 1. Nathani Consultoria - MOVED */}
+
 
             {/* 2. Nexus Store (Horizontal - 2 colunas) */}
             <ProjectCard
@@ -302,6 +293,16 @@ export default function App() {
               image={TheBarber}
               repoLink="https://github.com/RobsonMarcolino/The-barber-Company"
               demoLink="https://robsonmarcolino.github.io/The-barber-Company/"
+            />
+
+            {/* 9. Nathani Consultoria (Normal - 1 coluna) */}
+            <ProjectCard
+              title="Nathani Consultoria"
+              description="Landing page for Nathani Consultoria with focus on paid traffic management."
+              tags={['React', 'Landing Page', 'Marketing', 'Traffic']}
+              image={NathaniPage}
+              repoLink="https://github.com/RobsonMarcolino/nathani-page"
+              demoLink="https://robsonmarcolino.github.io/nathani-page/"
             />
           </div>
         </div>
